@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-    public GameObject player;
-
+    GameObject player;
+    GameObject director;
 
     float minDistance = 1.1f;
 
@@ -12,6 +12,7 @@ public class ArrowController : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("player");
+        director = GameObject.Find("GameDirector");
     }
     // Update is called once per frame
     void Update()
@@ -28,6 +29,7 @@ public class ArrowController : MonoBehaviour
         float distance = (p1 - p2).magnitude;
         if(distance < minDistance)
         {
+            director.GetComponent<GameDirector>().DecreaseHP();
             Destroy(gameObject);
         }
     }

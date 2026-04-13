@@ -9,16 +9,27 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    // Update is called once per frame
-    void Update()
+    // PC용 코드
+    //void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.LeftArrow))
+    //    {
+    //        transform.Translate(-speed, 0, 0);
+    //    }
+    //    if (Input.GetKey(KeyCode.RightArrow))
+    //    {
+    //        transform.Translate(speed, 0, 0);
+    //    }
+    //}
+
+    // 모바일용 코드
+    public void LButtonDown()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Translate(-speed, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Translate(speed, 0, 0);
-        }
+        transform.Translate(-speed, 0, 0);
+    }
+    
+    public void RButtonDown()
+    {
+        transform.Translate(speed, 0, 0);
     }
 }
