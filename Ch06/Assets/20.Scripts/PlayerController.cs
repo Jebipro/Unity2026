@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     float maxWalkSpeed = 2f;
 
     public Sprite[] walkSprites;
+    public float animationPeriod = 0.1f;
     float time = 0;
     int idx = 0;
     SpriteRenderer sr;
@@ -32,6 +33,13 @@ public class PlayerController : MonoBehaviour
         if(rb.linearVelocityX < maxWalkSpeed)
         {
             rb.AddForce(transform.right * walkForce);
+        }
+
+        time += Time.deltaTime;
+        if (time > animationPeriod)
+        {
+            time = 0;
+            sr.sprite = walkSprites[idx];
         }
     }
 }
