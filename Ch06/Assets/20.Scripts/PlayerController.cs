@@ -3,11 +3,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     float jumpForce = 400f;
-    float walkForce = 30f;
-    float maxWalkSpeed = 2f;
+    float walkForce = 0f;
+    float maxWalkSpeed = 1f;
 
     public Sprite[] walkSprites;
-    public float animationPeriod = 0.1f;
+    public float animationPeriod = 0.2f;
     float time = 0;
     int idx = 0;
     SpriteRenderer sr;
@@ -40,6 +40,11 @@ public class PlayerController : MonoBehaviour
         {
             time = 0;
             sr.sprite = walkSprites[idx];
+            idx++;
+            if(idx == walkSprites.Length)
+            {
+                idx = 0;
+            }
         }
     }
 }
