@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Sprite[] walkSprites;
     float time = 0;
     int idx = 0;
-
+    SpriteRenderer sr;
 
     Rigidbody2D rb;
 
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
