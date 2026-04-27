@@ -615,6 +615,7 @@ MonoBehaviour:
   walkSprites:
   - {fileID: 292310981503173399, guid: 4f80759bdc3dbe44a9433fb1e148078e, type: 3}
   - {fileID: -7477192630708466740, guid: 75fa5cdb2866de342827673fd68f8b44, type: 3}
+  jumpSprite: {fileID: -7026802269355729512, guid: ef073ef588855f24997dbe91fa0e4261, type: 3}
   animationPeriod: 0.2
 --- !u!95 &724251758
 Animator:

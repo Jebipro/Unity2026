@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     float jumpForce = 300f;
     float walkForce = 0f;
     float maxWalkSpeed = 1f;
+    Animator anim;
 
     public Sprite[] walkSprites;
     public Sprite jumpSprite;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
         Application.targetFrameRate = 60;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,16 @@ public class PlayerController : MonoBehaviour
         }
 
         time += Time.deltaTime;
+
+        if (rb.linearVelocityY != 0)
+        {
+            anim.SetBool("IsJumping". true);
+        }
+        else if (time > animationPeriod)
+        {
+
+        }
+
 
         //if (rb.linearVelocityY != 0)
         //{
