@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     float jumpForce = 300f;
-    float walkForce = 0f;
+    public float walkForce = 7f;
     float maxWalkSpeed = 1f;
     Animator anim;
 
@@ -64,5 +64,10 @@ public class PlayerController : MonoBehaviour
         //        idx = 0;
         //    }
         //}
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("¼º°ø");
     }
 }
