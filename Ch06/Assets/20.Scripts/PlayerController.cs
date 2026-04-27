@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
 
         if (rb.linearVelocityY != 0)
         {
-            anim.SetBool("IsJumping". true);
+            anim.SetBool("IsJumping", true);
         }
         else if (time > animationPeriod)
         {
-
+            anim.SetBool("IsJumping", false);
         }
 
 
