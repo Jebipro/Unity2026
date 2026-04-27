@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float jumpForce = 400f;
+    float jumpForce = 300f;
     float walkForce = 0f;
     float maxWalkSpeed = 1f;
 
     public Sprite[] walkSprites;
+    public Sprite jumpSprite;
     public float animationPeriod = 0.2f;
     float time = 0;
     int idx = 0;
@@ -36,15 +37,20 @@ public class PlayerController : MonoBehaviour
         }
 
         time += Time.deltaTime;
-        if (time > animationPeriod)
-        {
-            time = 0;
-            sr.sprite = walkSprites[idx];
-            idx++;
-            if(idx == walkSprites.Length)
-            {
-                idx = 0;
-            }
-        }
+
+        //if (rb.linearVelocityY != 0)
+        //{
+        //    sr.sprite = jumpSprite;
+        //}
+        //else if (time > animationPeriod)
+        //{
+        //    time = 0;
+        //    sr.sprite = walkSprites[idx];
+        //    idx++;
+        //    if (idx == walkSprites.Length)
+        //    {
+        //        idx = 0;
+        //    }
+        //}
     }
 }
