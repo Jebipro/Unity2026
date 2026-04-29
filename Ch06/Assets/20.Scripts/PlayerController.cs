@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    float jumpForce = 300f;
+    float jumpForce = 380f;
     public float walkForce = 7f;
     float maxWalkSpeed = 1f;
     Animator anim;
@@ -67,6 +67,11 @@ public class PlayerController : MonoBehaviour
         //        idx = 0;
         //    }
         //}
+
+        if (transform.position.y < -8)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
