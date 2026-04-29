@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,7 +30,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) &&
+                rb.linearVelocityY == 0)
         {
             rb.AddForce(transform.up * jumpForce);
         }
@@ -66,8 +69,9 @@ public class PlayerController : MonoBehaviour
         //}
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        SceneManager.LoadScene("ClearScene");
         Debug.Log("¼º°ø");
     }
 }
