@@ -246,8 +246,8 @@ GameObject:
   - component: {fileID: 724251752}
   - component: {fileID: 724251755}
   - component: {fileID: 724251756}
-  - component: {fileID: 724251757}
   - component: {fileID: 724251758}
+  - component: {fileID: 724251759}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -438,24 +438,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 0.6}
   m_EdgeRadius: 0
---- !u!114 &724251757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724251751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbf016bae86ead84db938850b6308f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  walkForce: 7
-  walkSprites:
-  - {fileID: 292310981503173399, guid: 4f80759bdc3dbe44a9433fb1e148078e, type: 3}
-  - {fileID: -7477192630708466740, guid: 75fa5cdb2866de342827673fd68f8b44, type: 3}
-  jumpSprite: {fileID: -7026802269355729512, guid: ef073ef588855f24997dbe91fa0e4261, type: 3}
-  animationPeriod: 0.2
 --- !u!95 &724251758
 Animator:
   serializedVersion: 7
@@ -478,6 +460,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &724251759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724251751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a0280567b58ed7449f9be28f3a0c272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMoveController
+  walkForce: 15
+  walkSprites: []
+  jumpSprite: {fileID: 0}
+  animationPeriod: 0.2
 --- !u!1001 &1206344854
 PrefabInstance:
   m_ObjectHideFlags: 0
