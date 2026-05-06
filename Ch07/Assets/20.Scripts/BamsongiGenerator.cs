@@ -12,8 +12,11 @@ public class BamsongiGenerator : MonoBehaviour
             GameObject bamsongi = Instantiate(bamsongiPrefab);
             bamsongi.transform.position = transform.position;
 
-            Vector3 dir = new Vector3(0, 200, 2000);
-            bamsongi.GetComponent<BamsongiController>().Shoot(dir);
+            //Vector3 dir = new Vector3(0, 200, 2000);
+            //bamsongi.GetComponent<BamsongiController>().Shoot(dir);
+
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            bamsongi.GetComponent<BamsongiController>().Shoot(ray.direction * 2000);
         }
     }
 }
