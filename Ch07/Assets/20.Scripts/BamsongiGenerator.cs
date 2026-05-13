@@ -4,6 +4,7 @@ public class BamsongiGenerator : MonoBehaviour
 {
     public GameObject bamsongiPrefab;
     public float throwForce = 1.5f;
+    public float minPower = 10f;
 
     float startY;
     
@@ -17,12 +18,13 @@ public class BamsongiGenerator : MonoBehaviour
 
         else if(Input.GetMouseButtonUp(0))
         {
+            float power = Input.mousePosition.y - startY;
+            if (power < minPower) return;
+
             GameObject bamsongi = Instantiate(bamsongiPrefab);
             bamsongi.transform.position = transform.position;
 
-            float power = Input.mousePosition.y - startY;
-
-            Vector3 dir = transform.forward + transform.up; 
+            Vector3 dir = transform.forward + transform.up * 0.5f; 
             bamsongi.GetComponent<BamsongiController>().Shoot(dir * power * throwForce);
 
             //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
